@@ -1,0 +1,94 @@
+# Basic aliases
+# NOTE:
+#   Use '\COMMAND' or 'command COMMAND' to use COMMAND noumenon, not alias of COMMAND
+alias ls='ls --color=auto'
+alias ll='ls -lh -rt'
+alias lt='tree'        # apt install tree
+alias llt='tree -lpsug'
+if command -v lsd &> /dev/null; then
+  alias ls='lsd'              # for lsd, apt install lsd
+  alias ll='lsd -l'           # for lsd
+  alias lt='ls --tree'        # for lsd
+  alias llt='ll --tree'       # for lsd
+elif command -v exa &> /dev/null; then
+  alias ls='exa --icons'      # for exa, apt install exa
+  alias ll='ls -lh --sort new --git'    # for exa
+  alias lt='ls -T'           # for exa
+  alias llt='ls -l -T'       # for exa
+fi
+alias la='ls -a'
+alias l.='ls -d .?*'
+alias ll.='l. -l'
+alias lf.='find . -maxdepth 1 -type f -name ".*"'
+#alias cd='z'  # use zoxide instead of cd
+alias grep='grep --color=auto --exclude-dir=".git"'
+alias diff='diff --color'
+alias man='man -P less'
+alias tree='tree -C'  # colorization
+alias tree-with-time-size='tree -stD'  # show time and size, order by time
+alias cat='cat -v'
+alias dsize='du -h -d 1'
+#alias rsync='rsync -avzP'
+alias rsync='rsync -az --info=progress2'
+alias pls='sudo $(fc -ln -1)'
+alias sudo='sudo env PATH=$PATH'
+#alias gpg='gpg --pinentry-mode curses'
+#alias bat='batcat'
+#alias fd='fdfind'
+alias apt-search="apt search --names-only"
+alias chrome-proxy="google-chrome --proxy-server='127.0.0.1:7891'"
+alias jf="python3 -m json.tool --indent 2 --no-ensure-ascii"
+
+# Aliases to optn Tmux with session name
+alias tls='tmux ls'
+alias tmain='tmux attach -t Main || tmux new -s Main'
+alias tcoding='tmux attach -t Coding || tmux new -s Coding'
+alias tmatrix='tmux attach -t Matrix || tmux new -s Matrix'
+alias ttty='tmux attach -t TTY || tmux new -s TTY'
+# Aliases to open Tmux popup window, Tmux version >= 3.2
+alias tp='tmux popup -w 70% -h 70%'
+alias tpp='tmux popup -w 80% -h 80% "tmux attach -t popup || tmux new -s popup"'
+
+# trans aliases
+alias tr_en2zh="trans -x 127.0.0.1:7890 -p en:zh-CN"  # -p: play audio
+alias tr_zh2en="trans -x 127.0.0.1:7890 -p zh-CN:en"  # -p: play audio
+
+# bc aliases
+#   refer: https://www.networkworld.com/article/971677/converting-numbers-on-linux-among-decimal-hexadecimal-octal-and-binary.html
+# convert from decimal
+alias dec2hex='f() { echo "obase=16; ibase=10; $1" | bc; unset -f f; }; f'
+alias dec2oct='f() { echo "obase=8; ibase=10; $1" | bc; unset -f f; }; f'
+alias dec2bin='f() { echo "obase=2; ibase=10; $1" | bc; unset -f f; }; f'
+# convert to decimal
+alias hex2dec='f() { echo "obase=10; ibase=16; `echo $1 | tr "a-z" "A-Z"`" | bc; unset -f f; }; f'
+alias oct2dec='f() { echo "obase=10; ibase=8; $1" | bc; unset -f f; }; f'
+alias bin2dec='f() { echo "obase=10; ibase=2; $1" | bc; unset -f f; }; f'
+
+# tabiew - csv file viewer
+alias tw_tsv="tw --separator $'\t'"
+
+# clipboard
+#   refer: https://unix.stackexchange.com/questions/632947/how-to-copy-into-graphical-clipboard-on-command-line-in-kde
+alias cbcopy='xclip -selection clipboard'
+alias cbpaste='xclip -selection clipboard -o'
+
+# for Mac OS to instead of netstat
+alias ssa="lsof -nP -i"
+alias sst="lsof -nP -iTCP"
+alias sstl="lsof -nP -iTCP -sTCP:LISTEN"
+alias sste="lsof -nP -iTCP -sTCP:ESTABLISHED"
+alias ssu="lsof -nP -iUDP"
+
+# postfixadmin server of matrix.works
+#  curl http://localhost:10000/postfixadmin
+alias mwx_web_tunnel_on="ssh -fN mwx-web-tunnel"
+alias mwx_web_tunnel_ls='lsof -nP -a -u $USER -c ssh -stcp:listen -i tcp:10000'
+alias mwx_web_tunnel_off='mwx_web_tunnel_ls && read -p "Kill? [y/N] " ans && [[ $ans =~ ^[yY]$ ]] && kill $(mwx_web_tunnel_ls -t)'
+
+# IBKR/FUTU API gateway tunnel, refer: ~/.ssh/config
+alias ibkr_api_tunnel_on="ssh -fN ibkr-tunnel"
+alias ibkr_api_tunnel_ls='lsof -nP -a -u $USER -c ssh -stcp:listen -i tcp:11112'
+alias ibkr_api_tunnel_off='ibkr_api_tunnel_ls && read -p "Kill? [y/N] " ans && [[ $ans =~ ^[yY]$ ]] && kill $(ibkr_api_tunnel_ls -t)'
+alias futu_api_tunnel_on="ssh -fN futu-tunnel"
+alias futu_api_tunnel_ls='lsof -nP -a -u $USER -c ssh -stcp:listen -i tcp:11111'
+alias futu_api_tunnel_off='futu_api_tunnel_ls && read -p "Kill? [y/N] " ans && [[ $ans =~ ^[yY]$ ]] && kill $(futu_api_tunnel_ls -t)'
