@@ -1,3 +1,3 @@
 [merge]
     command = "vimdiff"
-    args = ["{{ .Destination }}", "{{ .Source }}"]
+    args = ["{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}"]
