@@ -18,8 +18,6 @@ stty -ixon  # Enable searching history in Bash forward after backward with CTRL-
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 
-#command_exists starship && eval "$(starship init bash)"
-
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.bash_bindings ]] && source ~/.bash_bindings
@@ -27,6 +25,8 @@ export LC_ALL='en_US.UTF-8'
 [[ -f ~/.less_termcap ]] && source ~/.less_termcap
 [[ -f ~/.bash_proxy ]] && source ~/.bash_proxy
 [[ -f ~/.fzfrc.sh ]] && source ~/.fzfrc.sh
+
+#command_exists starship && eval "$(starship init bash)"
 
 # enable Proxy, the function defined in ~/.bash_proxy
 #proxy_on
@@ -93,9 +93,9 @@ command_exists zoxide && eval "$(zoxide init bash)"
 command_exists khal && eval "$(_KHAL_COMPLETE=bash_source khal)"
 
 # MPD daemon start (if no other user instance exists)
-if command_exists mpd; then
-    [[ ! -s ~/.mpd/pid ]] && mpd
-fi
+#if command_exists mpd; then
+#    [[ ! -s ~/.mpd/pid ]] && mpd
+#fi
 
 # Tmuxifier
 if [[ -d $HOME/.tmuxifier ]]; then
@@ -211,8 +211,8 @@ if [[ -d $PYENV_ROOT ]]; then
 fi
 
 # Dotnet on Windows (For running Dotnet on WSL or Bash for Windows)
-dotnet_path=/mnt/c/Program\ Files/dotnet
-[ -d "$dotnet_path" ] && PATH=$PATH:"$dotnet_path"
+#dotnet_path="/mnt/c/Program\ Files/dotnet"
+#[ -d "$dotnet_path" ] && PATH=$PATH:"$dotnet_path"
 
 # export all PATH
 export PATH
