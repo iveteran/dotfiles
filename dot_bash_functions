@@ -24,3 +24,25 @@ ss_listening() {
     echo "Usage: listening [pattern]"
   fi
 }
+
+chezmoi() {
+  case "$1" in
+    st)
+      shift
+      command chezmoi status "$@" ;;
+    df)
+      shift
+      command chezmoi diff "$@" ;;
+    up)
+      shift
+      command chezmoi update "$@" ;;
+    a)
+      shift
+      command chezmoi apply "$@" ;;
+    e)
+      shift
+      command chezmoi edit "$@" ;;
+    *)
+      command chezmoi "$@" ;;
+  esac
+}
