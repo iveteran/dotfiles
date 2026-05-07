@@ -167,12 +167,9 @@ if [ -d "$HOMEBREW_PATH" ]; then
     PATH=$PATH:$HOMEBREW_PATH/bin:$HOMEBREW_PATH/opt/ruby/bin
     source "$HOMEBREW_PATH/etc/profile.d/bash_completion.sh"
 
-    # 使用Aliyun Homebrew镜像
-    export HOMEBREW_INSTALL_FROM_API=1
-    export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"
-    export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
-    export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
-    export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
+    # 使用Tshinghua Homebrew镜像
+    export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+    export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
     # using `brew update` to effect settings
 fi
 
