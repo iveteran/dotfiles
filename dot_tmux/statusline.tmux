@@ -1,5 +1,5 @@
 # Tmux status line config
-set -g status-interval 2  # 每2秒更新一次，适合动态内容
+set -g status-interval 5  # 每N秒更新一次，适合动态内容
 set -g status-position bottom
 set -g status-left-length 150
 set -g status-right-length 200

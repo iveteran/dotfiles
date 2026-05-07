@@ -1,23 +1,52 @@
 #! /bin/sh
+# XXX: The file MUST be executable (chmod +x bspwmrc)
+# Refer: https://cn.linux-terminal.com/?p=1881
+
+# 将默认的 X 光标更改为更熟悉的左指针
+xsetroot -cursor_name left_ptr
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom &
 feh --bg-scale ~/.config/bspwm/wallpaper.png &
-~/.config/polybar/launch.sh
+#~/.config/polybar/launch.sh
+~/.config/polybar/launch.sh --blocks  # See: https://github.com/adi1090x/polybar-themes
 
-bspc monitor -d I II III IV V
+# Chinese input method
+#fcitx -d
+#pgrep -x fcitx > /dev/null || fcitx -d
+ibus-daemon -rxRd
 
-bspc config border_width         2
-bspc config window_gap           8
+# Music Player Daemon
+mpd
+
+bspc monitor -d I II III IV V VI VII VIII
+
+bspc config border_width         0
+bspc config window_gap           6
+
+#bspc config top_padding          5
+#bspc config left_padding         5
+#bspc config right_padding        5
+#bspc config bottom_padding       5
+
 #bspc config normal_border_color  \#FFFF00
 #bspc config focused_border_color \#00FF00
 
-bspc config split_ratio          0.5
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config split_ratio             0.5     # 窗口分隔比例
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+bspc config focus_follows_pointer   false   # 当鼠标移动到窗口自动获得焦点
 
-#bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
+# Use xprop | grep "WM_CLASS" to window class name
+bspc rule -a Alacritty desktop='^1' follow=on center=true rectangle=1400x800+0+0 #state=floating  # Terminal
+bspc rule -a Firefox desktop='^2' follow=on         # Bwowser - Firefox
+bspc rule -a Chrome desktop='^3' follow=on          # Browser - Chrome
+bspc rule -a qutebrowser desktop='^3' follow=on     # Browser - QuteBrowser
+bspc rule -a 'thunderbird-default' desktop='^4' follow=on     # Email Client
+bspc rule -a feh desktop='^6' follow=on             # Image Viewer
+bspc rule -a 'Display-im6.q16' desktop='^6' follow=on # Image Viewer
+bspc rule -a yesplaymusic desktop='^7' follow=on    # A clone of Netease Cloud Music
+#bspc rule -a Clash desktop='^6' follow=on
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off

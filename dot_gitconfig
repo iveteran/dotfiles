@@ -14,21 +14,38 @@
     lg = "log --stat --graph"
 [diff]
     tool = vimdiff
+    submodule = log
 [difftool]
     prompt = false
 [pull]
 	rebase = false
-[http]
-  version = "HTTP/1.1"
-  #proxy = http://yuu-tp:7890
-[https]
-  version = "HTTP/1.1"
-  #proxy = http://yuu-tp:7890
-[git]
-  proxy = socks5://yuu-tp:7891
-[core]
-  # Only for git server of Gas Refueler project
-  #sshCommand = "ssh -p 24"
-  quotepath = false
+[push]
+    default = matching
 [init]
-  defaultBranch = main
+    defaultBranch = main
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[http]
+    version = "HTTP/1.1"  # downgrade, fix error: RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly
+    #proxy = http://127.0.0.1:7890
+[https]
+    version = "HTTP/1.1"
+    #proxy = https://127.0.0.1:7890
+[git]
+    proxy = socks5://127.0.0.1:7891
+[core]
+    # Only for git server of Gas Refueler project
+    #sshCommand = "ssh -p 24"
+    quotepath = false
+    #pager = delta
+[init]
+    defaultBranch = main
+[interactive]
+    #diffFilter = delta --color-only
+[delta]
+    side-by-side = true
+    line-numbers = true
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    #syntax-theme = "Dracula"

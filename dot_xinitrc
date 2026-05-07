@@ -1,2 +1,4 @@
+# ~/.xinitrc
+setxkbmap -layout us -option
 source /etc/default/locale
 source ~/.bash_profile

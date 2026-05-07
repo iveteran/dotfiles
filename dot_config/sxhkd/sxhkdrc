@@ -4,16 +4,29 @@
 
 # terminal emulator
 alt + Return
+  #/usr/bin/alacritty
   uxterm -fa 'Monospace' -fs 15
+  # kitty  # 注释要有空格？或要在些section的未部？
 
 # program launcher
 alt + @space
   #dmenu_run
-  rofi -show
+  rofi -show drun
+  # dmenu_run  # 注释要有空格？
 
 # make sxhkd reload its configuration files:
 alt + Escape
   pkill -USR1 -x sxhkd
+
+# lock screen
+#alt + shift + Escape
+  #i3lock -i ~/.config/bspwm/wallpaper.png
+alt + shift + l
+  /usr/bin/i3lock-fancy -f Hack-Regular
+
+# Screenshot, the image will be saved to $HOME or $HOME/Pictures default
+alt + shift + s
+  /usr/bin/scrot
 
 #
 # bspwm hotkeys

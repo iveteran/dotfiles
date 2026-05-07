@@ -23,6 +23,7 @@ find_dirs() {
 
 #export FZF_DEFAULT_COMMAND='find_in_dir .'
 #export FZF_DEFAULT_OPTS='--margin=3% --border=double --color="dark,fg:magenta"'
+    #--header 'Press ALT-p to toggle preview window' \
 export FZF_DEFAULT_OPTS="\
     --bind='alt-p:toggle-preview' \
     --bind='ctrl-j:preview-down' \

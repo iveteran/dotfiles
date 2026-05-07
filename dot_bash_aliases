@@ -38,6 +38,7 @@ alias sudo='sudo env PATH=$PATH'
 alias apt-search="apt search --names-only"
 alias chrome-proxy="google-chrome --proxy-server='127.0.0.1:7891'"
 alias jf="python3 -m json.tool --indent 2 --no-ensure-ascii"
+alias w3m="w3m -sixel"  # https://github.com/tats/w3m/blob/master/doc/README.sixel
 alias nc_test="nc -zv"
 alias cz="chezmoi"
 
@@ -73,6 +74,9 @@ alias tw_tsv="tw --separator $'\t'"
 #   refer: https://unix.stackexchange.com/questions/632947/how-to-copy-into-graphical-clipboard-on-command-line-in-kde
 alias cbcopy='xclip -selection clipboard'
 alias cbpaste='xclip -selection clipboard -o'
+
+# start KDE Plasma wayland
+alias startwayland='dbus-run-session startplasma-wayland'
 
 # for Mac OS to instead of netstat
 alias ssa="lsof -nP -i"

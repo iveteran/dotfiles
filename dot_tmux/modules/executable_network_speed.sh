@@ -48,3 +48,5 @@ get_network_speed() {
     # 保存当前数据
     echo "$rx_bytes $tx_bytes $current_time" > "$cache_file"
 }
+
+#get_network_speed $1
