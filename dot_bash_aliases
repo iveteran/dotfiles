@@ -38,6 +38,8 @@ alias sudo='sudo env PATH=$PATH'
 alias apt-search="apt search --names-only"
 alias chrome-proxy="google-chrome --proxy-server='127.0.0.1:7891'"
 alias jf="python3 -m json.tool --indent 2 --no-ensure-ascii"
+alias nc_test="nc -zv"
+alias cz="chezmoi"
 
 # Aliases to optn Tmux with session name
 alias tls='tmux ls'
@@ -92,3 +94,7 @@ alias ibkr_api_tunnel_off='ibkr_api_tunnel_ls && read -p "Kill? [y/N] " ans && [
 alias futu_api_tunnel_on="ssh -fN futu-tunnel"
 alias futu_api_tunnel_ls='lsof -nP -a -u $USER -c ssh -stcp:listen -i tcp:11111'
 alias futu_api_tunnel_off='futu_api_tunnel_ls && read -p "Kill? [y/N] " ans && [[ $ans =~ ^[yY]$ ]] && kill $(futu_api_tunnel_ls -t)'
+
+# macOS
+#alias wechat2="open -n -a /Applications/WeChat2.app"
+alias wechat2="open -n -a /Applications/微信双开.app"
