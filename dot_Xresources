@@ -1,0 +1,11 @@
+! Use a truetype font and size.
+xterm*faceName: Monospace
+xterm*faceSize: 15
+xterm*background: #2C2C2C
+
+urxvt*scorllBar: false
+urxvt*foreground: White
+urxvt*internalBorder: 15
+urxvt*font: xft:hack:size=11
+urxvt*depth: 12
+urxvt*background: rgba:0000/0000/0200/c800

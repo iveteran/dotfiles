@@ -1,0 +1,18 @@
+!after editing .Xdefaults it may be reloaded with:
+!xrdb -load ~/.Xdefaults
+
+xterm*VT100*geometry: 110x50
+xterm*font: *-fixed-*-*-*-20-*
+xterm*background: #2C2C2C
+xterm*foreground: lightblue
+xterm*loginShell: true
+xterm*scrollBar: false
+xterm*rightScrollBar: true
+xterm*title: XTerm
+xterm*iconName: XTerm
+xterm*saveLines: 50000
+xterm*jumpScroll: true
+xterm*scrollTtyOutput: false
+xterm*scrollKey: true
+xterm*alwaysUseMods: true
+!xterm*metaSendsEsc

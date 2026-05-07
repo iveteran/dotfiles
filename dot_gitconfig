@@ -1,0 +1,34 @@
+[user]
+    name = Yu
+    email = yu@matrix.works
+[color]
+    ui = true
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    df = diff
+    dfc = diff --cached
+    pr = pull --rebase
+    lg = "log --stat --graph"
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[pull]
+	rebase = false
+[http]
+  version = "HTTP/1.1"
+  #proxy = http://yuu-tp:7890
+[https]
+  version = "HTTP/1.1"
+  #proxy = http://yuu-tp:7890
+[git]
+  proxy = socks5://yuu-tp:7891
+[core]
+  # Only for git server of Gas Refueler project
+  #sshCommand = "ssh -p 24"
+  quotepath = false
+[init]
+  defaultBranch = main
