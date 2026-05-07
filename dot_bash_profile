@@ -216,3 +216,7 @@ dotnet_path=/mnt/c/Program\ Files/dotnet
 
 # export all PATH
 export PATH
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+[ -d ~/.orbstack/ ] && source ~/.orbstack/shell/init.bash 2>/dev/null || :
