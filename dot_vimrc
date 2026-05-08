@@ -159,12 +159,12 @@ if filereadable(expand(statusline_rc))
 endif
 
 let vimplug_rc="~/.vim/custom/vim-plug.vimrc"
-if filereadable(expand(vimplug_rc))
+if isdirectory(expand("~/.vim/plugged")) && filereadable(expand(vimplug_rc))
   execute "source " . vimplug_rc
 endif
 
 let vundle_rc="~/.vim/custom/vundle.vimrc"
-if filereadable(expand(vundle_rc))
+if isdirectory(expand("~/.vim/bundle")) && filereadable(expand(vundle_rc))
   execute "source " . vundle_rc
 endif
 
