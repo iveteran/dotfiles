@@ -1,5 +1,20 @@
 # .chezmoiignore
-{{- $is_wsl := contains "microsoft" .chezmoi.kernel.osrelease -}}
+
+{{- /* 1. 定义操作系统 */ -}}
+{{- $os := .chezmoi.os -}}
+
+{{- /* 2. 安全地探测 WSL */ -}}
+{{- $is_wsl := false -}}
+{{- if eq $os "linux" -}}
+  {{- if hasKey .chezmoi "kernel" -}}
+    {{- if hasKey .chezmoi.kernel "osrelease" -}}
+      {{- if contains "microsoft" .chezmoi.kernel.osrelease -}}
+        {{- $is_wsl = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 {{- $is_macos := eq .chezmoi.os "darwin" -}}
 {{- $is_linux := eq .chezmoi.os "linux" -}}
 
