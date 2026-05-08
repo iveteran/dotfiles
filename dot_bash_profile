@@ -18,6 +18,7 @@ stty -ixon  # Enable searching history in Bash forward after backward with CTRL-
 
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
+export DISPLAY=:0  # Enable forwarding x11 with ssh on macOS
 
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases

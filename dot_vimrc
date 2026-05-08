@@ -212,3 +212,8 @@ if executable('clangd')
         autocmd FileType objcpp setlocal omnifunc=lsp#complete
     augroup end
 endif
+
+" fzf
+if isdirectory('/opt/homebrew/opt/fzf')
+    set rtp+=/opt/homebrew/opt/fzf        " macOS
+endif
