@@ -11,7 +11,7 @@ set -g status-keys vi           # command prompt
 set -g lock-command vlock
 
 # Enable Yazi's image preview to work correctly in tmux, add the following 3 options
-#set -g allow-passthrough all
+set -g allow-passthrough all
 set -ga update-environment TERM
 set -ga update-environment TERM_PROGRAM
 
@@ -19,7 +19,7 @@ set -ga update-environment TERM_PROGRAM
 
 # Configuring the window
 set -g base-index 1           # start windows numbering at 1
-set -g set-titles on          # set terminal title
+#set -g set-titles on          # set terminal title
 setw -g automatic-rename on   # rename window to reflect current program
 #set -g renumber-windows on    # renumber windows when a window is closed
 

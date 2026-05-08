@@ -1,5 +1,8 @@
-! Map both super_R to ctrl
-! xmodmap -e "remove mod4 = Super_R"
-! xmodmap -e "add control = Super_R"
-remove mod4 = Super_R
-add control = Super_R
+clear control
+clear mod4
+keycode 105 = Super_R
+keycode 134 = Control_R
+add control = Control_L Control_R
+add mod4 = Super_L Super_R
+
+! run: xmodmap ~/.Xmodmap

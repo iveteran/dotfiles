@@ -1,11 +1,14 @@
-! Use a truetype font and size.
-xterm*faceName: Monospace
-xterm*faceSize: 15
-xterm*background: #2C2C2C
+#include ".Xresources.d/uxtermrc"
 
-urxvt*scorllBar: false
-urxvt*foreground: White
-urxvt*internalBorder: 15
-urxvt*font: xft:hack:size=11
-urxvt*depth: 12
-urxvt*background: rgba:0000/0000/0200/c800
+! #include ".Xresources.d/fonts"
+! #include ".Xresources.d/rxvt-unicode"
+! #include ".Xresources.d/xscreensaver"
+! #include ".Xresources.d/xterm"
+
+! NOTE: To run below command to make changes effect
+! xrdb -merge ~/.Xresources
+!
+! Query:
+! xrdb -query -all
+!
+! Refer: https://wiki.archlinux.org/title/x_resources

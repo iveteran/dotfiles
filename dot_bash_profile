@@ -9,6 +9,7 @@ fi
 #    fbterm
 #fi
 
+umask 0022
 set -o ignoreeof # Prevent Ctrl-D to exit shell
 set -o vi
 stty -ixon  # Enable searching history in Bash forward after backward with CTRL-S
@@ -213,6 +214,9 @@ fi
 # Dotnet on Windows (For running Dotnet on WSL or Bash for Windows)
 #dotnet_path="/mnt/c/Program\ Files/dotnet"
 #[ -d "$dotnet_path" ] && PATH=$PATH:"$dotnet_path"
+
+# opencode
+[ -d $HOME/.opencode/bin ] && PATH=$HOME/.opencode/bin:$PATH
 
 # export all PATH
 export PATH
