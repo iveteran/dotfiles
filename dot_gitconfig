@@ -18,7 +18,7 @@
 [difftool]
     prompt = false
 [pull]
-	rebase = false
+    rebase = false
 [push]
     default = matching
 [init]
@@ -31,13 +31,14 @@
     #proxy = http://127.0.0.1:7890
 [https]
     version = "HTTP/1.1"
-    #proxy = https://127.0.0.1:7890
+    #proxy = http://127.0.0.1:7890
 [git]
-    proxy = socks5://127.0.0.1:7891
+    #proxy = socks5://127.0.0.1:7891
 [core]
     # Only for git server of Gas Refueler project
     #sshCommand = "ssh -p 24"
     quotepath = false
+    precomposeunicode = true  # macOS
     #pager = delta
 [init]
     defaultBranch = main
