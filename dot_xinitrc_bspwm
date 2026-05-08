@@ -1,0 +1,14 @@
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+
+# MPD daemon start (if no other user instance exists)
+#[ ! -s ~/.mpd/pid ] && mpd
+
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
+export socks_proxy="127.0.0.1:7891"
+
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
+exec bspwm
