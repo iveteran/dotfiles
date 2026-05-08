@@ -1,0 +1,197 @@
+# .chezmoiignore
+{{- $is_wsl := contains "microsoft" .chezmoi.kernel.osrelease -}}
+{{- $is_macos := eq .chezmoi.os "darwin" -}}
+{{- $is_linux := eq .chezmoi.os "linux" -}}
+
+{{- if not $is_wsl }}
+.wslconfig
+{{- end }}
+
+# OS tools
+{{- if not (lookPath "systemctl") }}
+.config/systemd/
+{{- end }}
+
+# Shells
+{{- if not (lookPath "bash") }}
+.bashrc
+.bash_profile
+.bash_prompt
+.bash_aliases
+.bash_bindings
+.bash_functions
+.bash_proxy
+{{- end }}
+
+{{- if not (lookPath "zsh") }}
+.zshrc
+.oh-my-zsh/
+{{- end }}
+
+# Editors
+{{- if not (lookPath "vim") }}
+.vimrc
+.vim/
+{{- end }}
+
+{{- if not (lookPath "nvim") }}
+.config/nvim/
+{{- end }}
+
+# Terminal Multiplexing
+{{- if not (lookPath "tmux") }}
+.tmux.conf
+.tmux/
+{{- end }}
+
+{{- if not (lookPath "screen") }}
+.screenrc
+{{- end }}
+
+# Email client
+{{- if not (lookPath "aerc") }}
+.config/aerc
+{{- end }}
+
+# SQL Database clients
+{{- if not (lookPath "psql") }}
+.psqlrc
+{{- end }}
+
+{{- if not (lookPath "sqlite3") }}
+.sqliterc
+{{- end }}
+
+{{- if not (lookPath "pgcli") }}
+.config/pgcli
+{{- end }}
+
+{{- if not (lookPath "litecli") }}
+.config/litecli
+{{- end }}
+
+# RSS reader
+{{- if not (lookPath "newsboat") }}
+.newsboat
+{{- end }}
+
+{{- if not (lookPath "uv") }}
+.config/uv
+{{- end }}
+
+# Git
+{{- if not (lookPath "git") }}
+.gitconfig
+{{- end }}
+
+# Gnupg
+{{- if not (lookPath "gpg") }}
+.gnupg/
+{{- end }}
+
+# GDB
+{{- if not (lookPath "gdb") }}
+.gdbinit
+.stl_views.gdb
+{{- end }}
+
+# Pager
+{{- if not (lookPath "less") }}
+.less_termcap
+.less_termcap_2
+{{- end }}
+
+# Efficient tools
+{{- if not (lookPath "fzf") }}
+.fzfrc.sh
+{{- end }}
+
+# Music service
+{{- if not (lookPath "mpd") }}
+.config/mpd/
+{{- end }}
+
+# Terminals
+{{- if not (lookPath "wezterm") }}
+.config/wezterm
+{{- end }}
+
+{{- if not (lookPath "alacritty") }}
+.config/alacritty
+{{- end }}
+
+{{- if not (lookPath "fbterm") }}
+.fbtermrc
+{{- end }}
+
+{{- if not (lookPath "kitty") }}
+.config/kitty/
+{{- end }}
+
+{{- if not (lookPath "foot") }}
+.config/foot/
+{{- end }}
+
+# File managers
+{{- if not (lookPath "lf") }}
+.config/lf/
+{{- end }}
+
+{{- if not (lookPath "yazi") }}
+.config/yazi/
+{{- end }}
+
+{{- if not (lookPath "ranger") }}
+.config/ranger/
+{{- end }}
+
+# Microsoft Onedrive
+{{- if not (lookPath "onedrive") }}
+.config/onedrive/
+{{- end }}
+
+# X11 server
+{{- if not (lookPath "Xorg") }}
+.Xdefaults
+.Xmodmap
+.Xresources
+.Xresources.d/
+.xinitrc
+.xinputrc
+{{- end }}
+
+# Window managers
+{{- if not (lookPath "bspwm") }}
+.xinitrc_bspwm
+.config/bspwm/
+.config/sxhkd/
+{{- end }}
+
+{{- if not (lookPath "i3") }}
+.config/i3/
+.config/i3status/
+.config/i3blocks/
+{{- end }}
+
+{{- if not (lookPath "sway") }}
+.config/sway/
+{{- end }}
+
+# Tools of window manager
+{{- if not (lookPath "picom") }}
+.config/picom/
+{{- end }}
+
+{{- if not (lookPath "rofi") }}
+.config/rofi/
+{{- end }}
+
+# VNC client
+{{- if not (lookPath "tigervnc") }}
+.config/tigervnc/
+{{- end }}
+
+# Tools of macOS
+{{- if not (lookPath "karabiner_cli") }}
+.config/karabiner/
+{{- end }}
