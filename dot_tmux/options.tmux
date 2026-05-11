@@ -5,7 +5,7 @@ set -s escape-time 10                     # faster command sequences
 set -sg repeat-time 600                   # increase repeat timeout
 set -s focus-events on
 set -g history-limit 65535
-set -g mouse off
+set -g mouse on                 # Tip: mouse on模式下可通过"shift+鼠标选择"来选择和复制文本
 set -g mode-keys vi             # copy-mode
 set -g status-keys vi           # command prompt
 set -g lock-command vlock
