@@ -27,6 +27,7 @@ export DISPLAY=:0  # Enable forwarding x11 with ssh on macOS
 [[ -f ~/.less_termcap ]] && source ~/.less_termcap
 [[ -f ~/.bash_proxy ]] && source ~/.bash_proxy
 [[ -f ~/.fzfrc.sh ]] && source ~/.fzfrc.sh
+[[ -f ~/.bash_macos ]] && source ~/.bash_macos
 
 #command_exists starship && eval "$(starship init bash)"
 
@@ -216,6 +217,9 @@ fi
 #dotnet_path="/mnt/c/Program\ Files/dotnet"
 #[ -d "$dotnet_path" ] && PATH=$PATH:"$dotnet_path"
 
+# Codex
+command_exists codex && eval "$(codex completion bash)"
+
 # opencode
 [ -d $HOME/.opencode/bin ] && PATH=$HOME/.opencode/bin:$PATH
 
@@ -225,3 +229,7 @@ export PATH
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 [ -d ~/.orbstack/ ] && source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/yuu/.local/bin:$PATH"
