@@ -211,6 +211,11 @@
 .config/karabiner/
 {{- end }}
 
+# Ignore files for *NOT* macOS
+{{- if not $is_macos}}
+.bash_macos
+{{- end }}
+
 # Yazi for macOS
 {{- if $is_macos}}
 .config/yazi
