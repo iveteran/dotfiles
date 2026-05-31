@@ -1,4 +1,4 @@
-# Loading pluings without plug manager
+# Loading plugins without plug manager
 # Need Tmux 3.1+
 #
 # Enable tmux-resurrect
