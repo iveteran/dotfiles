@@ -1,0 +1,18 @@
+export DISPLAY=:0  # Enable forwarding x11 with ssh on macOS
+
+JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+if [[ -d $JAVA_HOME ]]; then
+    export PATH=$JAVA_HOME/bin:$PATH
+    export CPPFLAGS="-I$JAVA_HOME/include"
+    export JAVA_HOME
+fi
+
+ANDROID_HOME=$HOME/Library/Android/sdk
+if [[ -d $ANDROID_HOME ]]; then
+    export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/build-tools/37.0.0
+    export ANDROID_HOME
+    export ANDROID_SDK_ROOT=$ANDROID_HOME
+fi
