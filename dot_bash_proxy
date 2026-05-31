@@ -1,6 +1,6 @@
 # vim: set ft=sh
 
-export no_proxy="localhost, 127.0.0.1, 163.com, 172.20.10.11/28, 192.168.8.0/24"
+export no_proxy="localhost, 127.0.0.1, ::1, 163.com, 172.20.10.11/28, 192.168.8.0/24"
 
 HOST=127.0.0.1
 
@@ -9,10 +9,10 @@ proxy_on() {
     export https_proxy="http://${HOST}:7890"
     export socks_proxy="${HOST}:7891"
     if command -v javac &> /dev/null; then
-        export JAVA_OPT="-Dhttps.proxyPort=7890 -Dhttps.proxyHost=127.0.0.1"
+        export JAVA_OPTS="-Dhttps.proxyPort=7890 -Dhttps.proxyHost=127.0.0.1 -Dhttps.protocols=TLSv1.2,TLSv1.3"
     fi
 
-    proxy_show
+    proxy_status
 }
 
 # clear proxies
@@ -20,11 +20,12 @@ proxy_off() {
     unset http_proxy
     unset https_proxy
     unset socks_proxy
+    unset JAVA_OPTS
 
-    proxy_show
+    proxy_status
 }
 
-proxy_show() {
+proxy_status() {
     # show proxy settings
     env | grep -i proxy
 }
