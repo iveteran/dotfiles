@@ -184,6 +184,9 @@ endif
 set shortmess-=S  " show search results count on statusline(bottom right)
 set showcmd	      " display incomplete commands
 
+" 将所有 .sh 文件映射为 bash 类型
+autocmd BufNewFile,BufRead *.sh set filetype=bash
+
 " NOTE: Instead of to set below options in ~/.editorconfig
 "augroup FileTypeSpecificAutocommands
 "    autocmd!
