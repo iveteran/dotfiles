@@ -210,3 +210,21 @@
 {{- if not (lookPath "karabiner_cli") }}
 .config/karabiner/
 {{- end }}
+
+# Yazi for macOS
+{{- if $is_macos}}
+.config/yazi
+{{- end }}
+
+# X config for *NOT* Linux
+{{- if not $is_linux}}
+.Xdefaults
+.Xmodmap
+.Xresources
+.Xresources.d
+.Xresources.d/uxtermrc
+.Xresources.d/xtermrc
+.Xresources.d/xtermrc2
+.xinitrc
+.xinputrc
+{{- end }}
