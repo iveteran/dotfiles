@@ -95,6 +95,8 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+packadd! editorconfig
+let g:EditorConfig_preserve_format = 0
 
 set ignorecase
 set incsearch
