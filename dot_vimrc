@@ -138,6 +138,8 @@ set autochdir
 set omnifunc=syntaxcomplete#Complete
 
 set laststatus=2
+set modeline
+set modelines=5
 
 "set clipboard=unnamedplus
 vmap <leader>y :w! /tmp/vim_clipbroad<CR>

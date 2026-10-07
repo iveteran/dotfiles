@@ -46,9 +46,7 @@
                             {
                                 "from": {
                                     "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": ["control", "shift"]
-                                    }
+                                    "modifiers": { "mandatory": ["control", "shift"] }
                                 },
                                 "to": [
                                     {
@@ -61,9 +59,7 @@
                             {
                                 "from": {
                                     "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": ["control", "shift"]
-                                    }
+                                    "modifiers": { "mandatory": ["control", "shift"] }
                                 },
                                 "to": [
                                     {
@@ -81,9 +77,7 @@
                             {
                                 "from": {
                                     "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": ["option"]
-                                    }
+                                    "modifiers": { "mandatory": ["option"] }
                                 },
                                 "to": [
                                     {
@@ -99,7 +93,6 @@
                         "description": "Map Home/End to Cmd+Left / Cmd+Right",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "home",
                                     "modifiers": { "optional": ["any"] }
@@ -109,10 +102,10 @@
                                         "key_code": "left_arrow",
                                         "modifiers": ["command"]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "end",
                                     "modifiers": { "optional": ["any"] }
@@ -122,7 +115,8 @@
                                         "key_code": "right_arrow",
                                         "modifiers": ["command"]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }
@@ -155,6 +149,19 @@
                         {
                             "from": { "key_code": "right_control" },
                             "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 30264,
+                        "vendor_id": 3141
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_control" }]
                         }
                     ]
                 }

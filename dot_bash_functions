@@ -5,6 +5,17 @@ command_exists() {
   command -v "$1" &> /dev/null
 }
 
+date_ts2str() {
+  # Linux
+  #date -d @$1
+  # macOS
+  date -r $1
+}
+
+#date_str2ts() {
+#  date -j -f "%Y-%m-%d" "2026-07-29" "+%s"
+#}
+
 jwt_decode() {
   echo 'Usage: jwt-decode `cat FILENAME`'
   jq -R 'split(".") |.[0:2] | map(@base64d) | map(fromjson)' <<< $1

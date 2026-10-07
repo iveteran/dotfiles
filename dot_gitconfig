@@ -9,10 +9,12 @@
     st = status
     br = branch
     wt = worktree
-    df = diff
-    dfc = diff --cached
+    df = diff --text
+    dfb = df -b
+    dfc = df --cached
     pr = pull --rebase
     lg = "log --stat --graph"
+    commits = "rev-list --count HEAD"
 [diff]
     tool = vimdiff
     submodule = log
@@ -38,7 +40,7 @@
 [core]
     # Only for git server of Gas Refueler project
     #sshCommand = "ssh -p 24"
-    quotepath = false
+	quotepath = false
     precomposeunicode = true  # macOS
     #pager = delta
 [init]
@@ -51,3 +53,5 @@
     navigate = true  # use n and N to move between diff sections
     dark = true      # or light = true, or omit for auto-detection
     #syntax-theme = "Dracula"
+[i18n]
+	logoutputencoding = utf-8
